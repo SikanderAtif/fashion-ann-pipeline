@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.dvc/cache
+.dvc/tmp
+.dvc/config.local
+# DVC-tracked payloads (DVC also adds its own entries)
+*.h5
+credentials.json
+client_secrets.json
+*.json.token
