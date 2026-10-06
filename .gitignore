@@ -10,4 +10,3 @@ __pycache__/
 credentials.json
 client_secrets.json
 *.json.token
-/models
