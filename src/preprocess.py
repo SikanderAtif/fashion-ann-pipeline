@@ -15,9 +15,12 @@ if __name__ == "__main__":
     x_test = np.load(f"{RAW}/x_test.npy").astype("float32")
     y_test = np.load(f"{RAW}/y_test.npy")
 
-    x_train = x_train / 255.0 - 0.5
-    x_test = x_test / 255.0 - 0.5
-    
+    x_train = x_train / 255.0
+    x_test = x_test / 255.0
+    mean, std = x_train.mean(), x_train.std()
+    x_train = (x_train - mean) / std
+    x_test = (x_test - mean) / std
+        
     x_tr, x_val, y_tr, y_val = train_test_split(
         x_train, y_train,
         test_size=params["test_size"],
